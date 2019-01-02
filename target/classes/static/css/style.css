@@ -1,0 +1,18 @@
+.jumbotron{
+	color:white;
+	background-image:url("/images/images(99).jpg");
+	height: 11em;
+	margin-bottom: 0px;
+}
+#navigation-bar, #navigation-bar div{
+	background-color:black;
+	color:white;
+	padding-top: 0px;
+}
+#navigation-bar div li{
+	padding-right:4em;
+}
+.homeimages{
+	width:100%;
+	height:70%;
+}
