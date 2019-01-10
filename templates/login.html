@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>FOAR</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  
+  <body>
+    <div class="jumbotron">
+    </div>
+    <header>
+	    <nav id="navigation-bar" class="navbar navbar-expand-lg navbar-light ">
+	    	<div class="container">
+	    		<a class="navbar-brand">FOAR</a>
+	    	</div>
+	    	<div class="collapse navbar-collapse">
+	    		<ul class="navbar-nav mr-auto">
+	    			<li class="nav-item">
+	    				<a th:href="@{/}">Home</a>
+	    			</li>
+	    			<li class="nav-item">
+	    				<a th:href="@{/login}">Login</a>
+	    			</li>
+	    			<li class="nav-item">
+	    				<a th:hrefhref="@{/sponsors}">Sponsors</a>
+	    			</li>
+	    			<li class="nav-item dropdown open">
+	    				<a th:href="@{/user_register}">Register</a>
+	    			</li>
+	    		</ul>
+	    	</div>
+	    </nav>
+    </header>
+	<div class="container">
+		<div>
+			<h1>login page</h1>
+		</div>
+		<div class="row">
+			<form th:action="@{/login}" th:object="${user}" method="POST">		
+			<table>
+				<thead>
+					<tr>
+						<th>Login</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Username</td>
+						<td>
+							<input type="text" name="Username">
+						</td>
+					</tr>
+					<tr>
+						<td>Password</td>
+						<td>
+							<input type="password" name="Password">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="submit" value="login">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="text-danger" th:if="${#fields.hasErrors('Username')}" 
+     th:errors="*{Username}">Username Error
+							</span>
+							<span class="text-danger" th:if="${#fields.hasErrors('Password')}" 
+     th:errors="*{Password}">Password Error
+							</span>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</form>
+		</div>
+	</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script th:href="@{/js/jquery-3.3.1.slim.min.js}" src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script th:href="@{/js/popper.min.js}" src="../js/popper.min.js"></script>
+    <script th:href="@{/js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
+    <script th:href="@{/js/holder.min.js}" src="../js/holder.min.js"></script>    
+  </body>
+</html>
