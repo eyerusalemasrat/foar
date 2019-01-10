@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>FOAR</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  
+  <body>
+    <div class="jumbotron">
+    </div>
+    <header>
+	    <nav id="navigation-bar" class="navbar navbar-expand-lg navbar-light ">
+	    	<div class="container">
+	    		<a class="navbar-brand">FOAR</a>
+	    	</div>
+	    	<div class="collapse navbar-collapse">
+	    		<ul class="navbar-nav mr-auto">
+	    			<li class="nav-item">
+	    				<a th:href="@{/}">Home</a>
+	    			</li>
+	    			<li class="nav-item">
+	    				<a th:href="@{/login}">Login</a>
+	    			</li>
+	    			<li class="nav-item">
+	    				<a th:hrefhref="@{/sponsors}">Sponsors</a>
+	    			</li>
+	    			<li class="nav-item dropdown open">
+	    				<a th:href="@{/user_register}">Register</a>
+	    			</li>
+	    		</ul>
+	    	</div>
+	    </nav>
+    </header>
+	<div class="container">
+		<div class="row">
+		Sponsors page
+		</div>
+	</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script th:href="@{/js/jquery-3.3.1.slim.min.js}" src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script th:href="@{/js/popper.min.js}" src="../js/popper.min.js"></script>
+    <script th:href="@{/js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
+    <script th:href="@{/js/holder.min.js}" src="../js/holder.min.js"></script>    
+  </body>
+</html>
