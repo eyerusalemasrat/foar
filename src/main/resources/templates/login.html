@@ -26,6 +26,9 @@
 	    			<li class="nav-item">
 	    				<a th:hrefhref="@{/sponsors}">Sponsors</a>
 	    			</li>
+	    			<li class="nav-item dropdown open">
+	    				<a th:href="@{/user_register}">Register</a>
+	    			</li>
 	    		</ul>
 	    	</div>
 	    </nav>
@@ -36,7 +39,7 @@
 		</div>
 		<div class="row">
 			<form th:action="@{/login}" th:object="${user}" method="POST">		
-			<table>
+			<table id="login_table">
 				<thead>
 					<tr>
 						<th>Login</th>
@@ -57,17 +60,17 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="submit" value="login">
+							<input type="submit" value="login" class="btn btn-info">
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<span class="text-danger" th:if="${#fields.hasErrors('Username')}" 
      th:errors="*{Username}">Username Error
-							</span>
+							</span><br>
 							<span class="text-danger" th:if="${#fields.hasErrors('Password')}" 
      th:errors="*{Password}">Password Error
-							</span>
+							</span><br>
 
 						</td>
 					</tr>

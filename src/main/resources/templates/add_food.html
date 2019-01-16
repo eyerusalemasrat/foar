@@ -16,18 +16,18 @@
 	    		<a class="navbar-brand">FOAR</a>
 	    	</div>
 	    	<div class="collapse navbar-collapse">
-	    		<ul class="navbar-nav mr-auto">
+	    		<ul class="navbar-nav mr-auto nav-dropdown">
 	    			<li class="nav-item">
-	    				<a th:href="@{/}">Home</a>
+	    				<a th:href="@{/restaurant_home}">Home</a>
 	    			</li>
 	    			<li class="nav-item">
-	    				<a th:href="@{/login}">Login</a>
-	    			</li>
-	    			<li class="nav-item">
-	    				<a th:hrefhref="@{/sponsors}">Sponsors</a>
+	    				<a th:href="@{/add_food}">Add Food</a>
 	    			</li>
 	    			<li class="nav-item dropdown open">
-	    				<a th:href="@{/user_register}">Register</a>
+	    				<a th:href="@{/remove_food}">Remove Food</a>
+	    			</li>
+	    			<li class="nav-item">
+	    				<a th:href="@{/logout}">Logout</a>
 	    			</li>
 	    		</ul>
 	    	</div>
@@ -35,15 +35,52 @@
     </header>
 	<div class="container">
 		<div class="row">
-		Sponsors page
+			<div class="col-sm-12">
+				<h1>Add Food
+				</h1>
+			</div>
+			<div class="col-sm12">
+				<table>
+					<thead>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<span class="badge">Food Name</span><br>
+								<input type="text">
+							</td>
+							<td>
+								<span class="badge">Food Picture</span><br>
+								<input type="file">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span>Ingredients</span><br>
+								<input type="text">
+							</td>
+							<td>
+								<span>Price</span><br>
+								<input type="number">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="submit" value="next">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script th:href="@{/js/jquery-3.3.1.slim.min.js}" src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script th:href="@{/js/jquery-3.3.1.slim.min.js}" src="../js/jquery.min.js"></script>
+    <script th:href="@{/js/script.min.js}" src="../js/script.min.js"></script>
     <script th:href="@{/js/popper.min.js}" src="../js/popper.min.js"></script>
     <script th:href="@{/js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
     <script th:href="@{/js/holder.min.js}" src="../js/holder.min.js"></script>    
-  </body>
+</body>
 </html>

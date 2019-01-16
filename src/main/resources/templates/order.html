@@ -18,16 +18,16 @@
 	    	<div class="collapse navbar-collapse">
 	    		<ul class="navbar-nav mr-auto">
 	    			<li class="nav-item">
-	    				<a th:href="@{/}">Home</a>
+	    				<a th:href="@{/user_home}">Home</a>
 	    			</li>
 	    			<li class="nav-item">
-	    				<a th:href="@{/login}">Login</a>
+	    				<a th:href="@{/recipe}">Recipes</a>
 	    			</li>
 	    			<li class="nav-item">
-	    				<a th:hrefhref="@{/sponsors}">Sponsors</a>
+	    				<a th:href="@{/order}">Order</a>
 	    			</li>
-	    			<li class="nav-item dropdown open">
-	    				<a th:href="@{/user_register}">Register</a>
+	    			<li class="nav-item">
+	    				<a th:href="@{/logout}">Logout</a>
 	    			</li>
 	    		</ul>
 	    	</div>
@@ -35,7 +35,14 @@
     </header>
 	<div class="container">
 		<div class="row">
-		Sponsors page
+			<div class="col-sm-12">
+				<h1>Order Page</h1>
+			</div>
+			<div>
+				<table>
+					<tr></tr>
+				</table>
+			</div>
 		</div>
 	</div>
     <!-- Bootstrap core JavaScript
@@ -45,5 +52,5 @@
     <script th:href="@{/js/popper.min.js}" src="../js/popper.min.js"></script>
     <script th:href="@{/js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
     <script th:href="@{/js/holder.min.js}" src="../js/holder.min.js"></script>    
-  </body>
+</body>
 </html>

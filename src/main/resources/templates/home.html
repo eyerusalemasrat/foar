@@ -26,6 +26,9 @@
 	    			<li class="nav-item">
 	    				<a th:href="@{/sponsors}">Sponsors</a>
 	    			</li>
+	    			<li class="nav-item dropdown open">
+	    				<a th:href="@{/user_register}">Register</a>
+	    			</li>
 	    		</ul>
 	    	</div>
 	    </nav>
@@ -35,17 +38,24 @@
 			<div class="col-sm-12">
 				<h1>FOAR:Food Ordering And Recipe Service
 				</h1>
-				<p>Three simple steps</p>
 			</div>
 			<div class="col-sm-4">
 				<img th:src="@{/images/Register.jpg}" class="homeimages">
-				Register
+				<h3>
+					<a href="@{/user_register}">Register</a>
+				</h3>
 			</div>
 			<div class="col-sm-4">
-				<img th:src="@{/images/Recipes.jpg}" class="homeimages">Find Recipe's
+				<img th:src="@{/images/Recipes.jpg}" class="homeimages">
+				<h3>
+					<a href="@{/login}">Find Recipe's</a>
+				</h3>
 			</div>
 			<div class="col-sm-4">
-				<img th:src="@{/images/OrderOnline.jpg}" class="homeimages">Order Food
+				<img th:src="@{/images/OrderOnline.jpg}" class="homeimages">
+				<h3>
+					<a href="@{/login}">Order Food</a>
+				</h3>
 			</div>
 		</div>
 	</div>

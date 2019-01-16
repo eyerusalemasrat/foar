@@ -24,7 +24,7 @@
 	    				<a th:href="@{/login}">Login</a>
 	    			</li>
 	    			<li class="nav-item">
-	    				<a th:hrefhref="@{/sponsors}">Sponsors</a>
+	    				<a th:href="@{/sponsors}">Sponsors</a>
 	    			</li>
 	    			<li class="nav-item dropdown open">
 	    				<a th:href="@{/user_register}">Register</a>
@@ -35,7 +35,48 @@
     </header>
 	<div class="container">
 		<div class="row">
-		Sponsors page
+			<div class="col-sm-12">
+				<h1>User Register</h1>
+				<form th:action="@{/user_register}" th:object="${userRegister}" method="POST">
+					<table id="table">
+						<tr>
+							<td>
+								<span>Username</span><br>
+								<input type="text" name="Username" class="inputs">
+							</td>
+							<td>
+								<span>Email</span><br>
+								<input type="email" name="Email" class="inputs">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span>Password</span><br>
+								<input type="password" name="Password" class="inputs">
+							</td>
+							<td>
+								<span>Retype Password</span><br>
+								<input type="password" name="Repassword" class="inputs">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span>Default Address</span><br>
+								<input type="text" name="DefaultAddress" class="inputs">
+							</td>
+							<td>
+								<span>Phone Number</span><br>
+								<input type="text" name="PhoneNumber" class="inputs">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="submit" value="Register" class="btn btn-info">
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
 		</div>
 	</div>
     <!-- Bootstrap core JavaScript
