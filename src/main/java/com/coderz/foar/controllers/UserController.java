@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-	@GetMapping("/current")
-	public String user() {
-		return "user";    
-	}
+  
+  @GetMapping("/current")
+  public String user() {
+    return "user";    
+  }
 
 }
