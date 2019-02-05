@@ -45,18 +45,51 @@
 				<h1>Register Delivery Page
 				</h1>
 			</div>
-			<div>
-				<table>
-					<tbody>
-						<tr>
-							<td>
-								<span class="badge">Full Name:</span><br>
-								<input type="text">
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+		<div class="row">
+			<form th:action="@{/register_delivery}" th:object="${delivery}" method="POST">		
+			<table id="login_table">
+				<tbody>
+					<tr>
+						<td>Name</td>
+						<td>
+							<input type="text" name="name">
+						</td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>
+							<input type="email" name="email">
+						</td>
+					</tr>
+					<tr>
+						<td>Phone Number</td>
+						<td>
+							<input type="text" name="phonenumber">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="submit" value="register" class="btn btn-info">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="text-danger" th:if="${#fields.hasErrors('name')}" 
+     th:errors="*{name}">Name Error
+							</span>
+							<span class="text-danger" th:if="${#fields.hasErrors('phonenumber')}" 
+     th:errors="*{phonenumber}">Phone Number Error
+							</span>
+							<span class="text-danger" th:if="${#fields.hasErrors('email')}" 
+     th:errors="*{email}">Email Error
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</form>
+		</div>
+
 		</div>
 	</div>
     <!-- Bootstrap core JavaScript
