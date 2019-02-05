@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>FOAR</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  
+  <body>
+    <div class="jumbotron">
+    </div>
+    <header>
+	    <nav id="navigation-bar" class="navbar navbar-expand-lg navbar-light ">
+	    	<div class="container">
+	    		<a class="navbar-brand">FOAR</a>
+	    	</div>
+	    	<div class="collapse navbar-collapse">
+	    		<ul class="navbar-nav mr-auto nav-dropdown">
+	    			<li class="nav-item">
+	    				<a th:href="@{/restaurant_home}">Home</a>
+	    			</li>
+	    			<li class="nav-item">
+	    				<a th:href="@{/add_food}">Add Food</a>
+	    			</li>
+	    			<li class="nav-item dropdown open">
+	    				<a th:href="@{/remove_food}">Remove Food</a>
+	    			</li>
+	    			<li class="nav-item">
+	    				<a th:href="@{/logout}">Logout</a>
+	    			</li>
+	    		</ul>
+	    	</div>
+	    </nav>
+    </header>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Add Food
+				</h1>
+			</div>
+			<div class="col-sm12">
+			<form method="POST"  th:action = "@{/add_food}" th:object="${food}" enctype="multipart/form-data">
+				<table>
+					<thead>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<span class="badge">Food Name</span>
+								<input type="text" name="name">
+							</td>
+							<td>
+								<span class="badge">Food Type</span>
+								<input type="text" name="type">
+							</td>
+							<td>
+								<span class="badge">Food Picture</span>
+								<input type="file" name="picture">
+							</td>
+							<td>
+								<span>Price</span>
+								<input type="number" name="price">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="submit" value="next">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				</form>
+			</div>
+		</div>
+	</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script th:href="@{/js/jquery-3.3.1.slim.min.js}" src="../js/jquery.min.js"></script>
+    <script th:href="@{/js/script.min.js}" src="../js/script.min.js"></script>
+    <script th:href="@{/js/popper.min.js}" src="../js/popper.min.js"></script>
+    <script th:href="@{/js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
+    <script th:href="@{/js/holder.min.js}" src="../js/holder.min.js"></script>    
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>FOAR</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  
+  <body>
+    <div class="jumbotron">
+    </div>
+    <header>
+	    <nav id="navigation-bar" class="navbar navbar-expand-lg navbar-light ">
+	    	<div class="container">
+	    		<a class="navbar-brand">FOAR</a>
+	    	</div>
+	    	<div class="collapse navbar-collapse">
+	    		<ul class="navbar-nav mr-auto nav-dropdown">
+	    			<li class="nav-item">
+	    				<a th:href="@{/admin_home}">Home</a>
+	    			</li>
+	    			<li class="nav-item">
+	    				<a th:href="@{/order_list}">Orders</a>
+	    			</li>
+	    			<li class="nav-item dropdown open">
+	    				<a th:href="@{/register}">Register</a>
+	    			</li>
+	    			<li class="nav-item dropdown open">
+	    				<a th:href="@{/remove}">Remove</a>
+	    			</li>
+	    			<li class="nav-item">	    				
+	    				<a th:href="@{/rating_list}">Ratings</a>
+	    			</li>
+	    			<li class="nav-item">
+	    				<a th:href="@{/logout}">Logout</a>
+	    			</li>
+	    		</ul>
+	    	</div>
+	    </nav>
+    </header>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Register Restaurant Page
+				</h1>
+			</div>
+		<div class="row">
+			<form th:action="@{/register_restaurant}" th:object="${restaurant}" method="POST">		
+			<table id="login_table">
+				<tbody>
+					<tr>
+						<td>Name</td>
+						<td>
+							<input type="text" name="name">
+						</td>
+					</tr>
+					<tr>
+						<td>Location</td>
+						<td>
+							<input type="text" name="location" >
+						</td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>
+							<input type="email" name="email">
+						</td>
+					</tr>
+					<tr>
+						<td>Phone Number</td>
+						<td>
+							<input type="text" name="phonenumber">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="submit" value="register" class="btn btn-info">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="text-danger" th:if="${#fields.hasErrors('name')}" 
+     th:errors="*{name}">Name Error
+							</span>
+							<span class="text-danger" th:if="${#fields.hasErrors('location')}" 
+     th:errors="*{location}">Location Error
+							</span>
+							<span class="text-danger" th:if="${#fields.hasErrors('phonenumber')}" 
+     th:errors="*{phonenumber}">Phone Number Error
+							</span>
+							<span class="text-danger" th:if="${#fields.hasErrors('email')}" 
+     th:errors="*{email}">Email Error
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</form>
+		</div>
+
+		</div>
+	</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script th:href="@{/js/jquery-3.3.1.slim.min.js}" src="../js/jquery.min.js"></script>
+    <script th:href="@{/js/script.min.js}" src="../js/script.min.js"></script>
+    <script th:href="@{/js/popper.min.js}" src="../js/popper.min.js"></script>
+    <script th:href="@{/js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
+    <script th:href="@{/js/holder.min.js}" src="../js/holder.min.js"></script>    
+</body>
+</html>

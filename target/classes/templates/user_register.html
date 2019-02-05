@@ -34,11 +34,12 @@
 	    </nav>
     </header>
 	<div class="container">
-		<div>
-			<h1>login page</h1>
-		</div>
 		<div class="row">
-			<form th:action="@{/login}" th:object="${user}" method="POST">		
+			<div class="col-sm-12">
+				<h1>User Register</h1>
+			</div>
+		<div class="row">
+			<form th:action="@{/user_register}" th:object="${user}" method="POST">		
 			<table id="login_table">
 				<thead>
 					<tr>
@@ -47,7 +48,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>Username</td>
+						<td>User name</td>
 						<td>
 							<input type="text" name="username">
 						</td>
@@ -55,17 +56,24 @@
 					<tr>
 						<td>Password</td>
 						<td>
-							<input type="password" name="password">
+							<input type="password" name="password" >
+						</td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>
+							<input type="email" name="email">
+						</td>
+					</tr>
+					<tr>
+						<td>Default Location</td>
+						<td>
+							<input type="text" name="default_location">
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<input type="submit" value="login" class="btn btn-info">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Don't have account?<a th:href="@{/user_register}">Signup</a>
+							<input type="submit" value="register" class="btn btn-info">
 						</td>
 					</tr>
 					<tr>
@@ -76,12 +84,21 @@
 							<span class="text-danger" th:if="${#fields.hasErrors('password')}" 
      th:errors="*{password}">Password Error
 							</span>
-
+							<span class="text-danger" th:if="${#fields.hasErrors('default_location')}" 
+     th:errors="*{default_location}">Default Location Error
+							</span>
+							<span class="text-danger" th:if="${#fields.hasErrors('current_location')}" 
+     th:errors="*{current_location}">Current Location Error
+							</span>
+							<span class="text-danger" th:if="${#fields.hasErrors('email')}" 
+     th:errors="*{email}">Email Error
+							</span>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 			</form>
+		</div>
 		</div>
 	</div>
     <!-- Bootstrap core JavaScript

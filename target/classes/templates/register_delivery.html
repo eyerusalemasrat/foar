@@ -16,80 +16,89 @@
 	    		<a class="navbar-brand">FOAR</a>
 	    	</div>
 	    	<div class="collapse navbar-collapse">
-	    		<ul class="navbar-nav mr-auto">
+	    		<ul class="navbar-nav mr-auto nav-dropdown">
 	    			<li class="nav-item">
-	    				<a th:href="@{/}">Home</a>
+	    				<a th:href="@{/admin_home}">Home</a>
 	    			</li>
 	    			<li class="nav-item">
-	    				<a th:href="@{/login}">Login</a>
-	    			</li>
-	    			<li class="nav-item">
-	    				<a th:href="@{/sponsors}">Sponsors</a>
+	    				<a th:href="@{/order_list}">Orders</a>
 	    			</li>
 	    			<li class="nav-item dropdown open">
-	    				<a th:href="@{/user_register}">Register</a>
+	    				<a th:href="@{/register}">Register</a>
+	    			</li>
+	    			<li class="nav-item dropdown open">
+	    				<a th:href="@{/remove}">Remove</a>
+	    			</li>
+	    			<li class="nav-item">	    				
+	    				<a th:href="@{/rating_list}">Ratings</a>
+	    			</li>
+	    			<li class="nav-item">
+	    				<a th:href="@{/logout}">Logout</a>
 	    			</li>
 	    		</ul>
 	    	</div>
 	    </nav>
     </header>
 	<div class="container">
-		<div>
-			<h1>login page</h1>
-		</div>
 		<div class="row">
-			<form th:action="@{/login}" th:object="${user}" method="POST">		
+			<div class="col-sm-12">
+				<h1>Register Delivery Page
+				</h1>
+			</div>
+		<div class="row">
+			<form th:action="@{/register_delivery}" th:object="${delivery}" method="POST">		
 			<table id="login_table">
-				<thead>
-					<tr>
-						<th>Login</th>
-					</tr>
-				</thead>
 				<tbody>
 					<tr>
-						<td>Username</td>
+						<td>Name</td>
 						<td>
-							<input type="text" name="username">
+							<input type="text" name="name">
 						</td>
 					</tr>
 					<tr>
-						<td>Password</td>
+						<td>Email</td>
 						<td>
-							<input type="password" name="password">
+							<input type="email" name="email">
 						</td>
 					</tr>
 					<tr>
+						<td>Phone Number</td>
 						<td>
-							<input type="submit" value="login" class="btn btn-info">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Don't have account?<a th:href="@{/user_register}">Signup</a>
+							<input type="text" name="phonenumber">
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<span class="text-danger" th:if="${#fields.hasErrors('username')}" 
-     th:errors="*{username}">Username Error
+							<input type="submit" value="register" class="btn btn-info">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="text-danger" th:if="${#fields.hasErrors('name')}" 
+     th:errors="*{name}">Name Error
 							</span>
-							<span class="text-danger" th:if="${#fields.hasErrors('password')}" 
-     th:errors="*{password}">Password Error
+							<span class="text-danger" th:if="${#fields.hasErrors('phonenumber')}" 
+     th:errors="*{phonenumber}">Phone Number Error
 							</span>
-
+							<span class="text-danger" th:if="${#fields.hasErrors('email')}" 
+     th:errors="*{email}">Email Error
+							</span>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 			</form>
 		</div>
+
+		</div>
 	</div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script th:href="@{/js/jquery-3.3.1.slim.min.js}" src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script th:href="@{/js/jquery-3.3.1.slim.min.js}" src="../js/jquery.min.js"></script>
+    <script th:href="@{/js/script.min.js}" src="../js/script.min.js"></script>
     <script th:href="@{/js/popper.min.js}" src="../js/popper.min.js"></script>
     <script th:href="@{/js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
     <script th:href="@{/js/holder.min.js}" src="../js/holder.min.js"></script>    
-  </body>
+</body>
 </html>
