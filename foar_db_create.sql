@@ -1,83 +1,2038 @@
 
-    create table hibernate_sequence (
-       next_val bigint
-    ) engine=InnoDB
-
-    insert into hibernate_sequence values ( 1 )
-
     create table role (
-       role_id integer not null,
+       id bigint not null auto_increment,
         role varchar(255),
-        primary key (role_id)
-    ) engine=InnoDB
-
-    create table hibernate_sequence (
-       next_val bigint
-    ) engine=InnoDB
-
-    insert into hibernate_sequence values ( 1 )
-
-    create table role (
-       role_id integer not null,
-        role varchar(255),
-        primary key (role_id)
-    ) engine=InnoDB
-
-    create table hibernate_sequence (
-       next_val bigint
-    ) engine=InnoDB
-
-    insert into hibernate_sequence values ( 1 )
-
-    create table role (
-       role_id integer not null,
-        role varchar(255),
-        primary key (role_id)
-    ) engine=InnoDB
-
-    create table role (
-       role_id integer not null,
-        role varchar(255),
-        primary key (role_id)
-    ) engine=InnoDB
-
-    create table hibernate_sequence (
-       next_val bigint
-    ) engine=InnoDB
-
-    insert into hibernate_sequence values ( 1 )
-
-    create table role (
-       user_id bigint not null,
-        role_id integer not null,
-        primary key (user_id, role_id)
+        primary key (id)
     ) engine=InnoDB
 
     create table user (
-       user_id bigint not null auto_increment,
-        default_address varchar(255) not null,
-        email varchar(255) not null,
+       id bigint not null auto_increment,
         password varchar(255) not null,
-        phone_number varchar(255) not null,
-        repassword varchar(255) not null,
         username varchar(255) not null,
-        primary key (user_id)
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        primary key (id)
     ) engine=InnoDB
 
-    alter table role 
-       add constraint FK91o3jx1kkh8py8fil96eakfxv 
-       foreign key (role_id) 
-       references role (role_id)
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
 
-    alter table role 
-       add constraint FK61g3ambult7v7nh59xirgd9nf 
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
        foreign key (user_id) 
-       references user (user_id)
+       references user (id)
 
     create table role (
-       role_id integer not null,
+       id bigint not null auto_increment,
         role varchar(255),
-        primary key (role_id)
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table role (
+       id bigint not null auto_increment,
+        role varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id bigint not null auto_increment,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255),
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user_role (
+       user_id bigint not null,
+        role_id bigint not null,
+        primary key (user_id, role_id)
+    ) engine=InnoDB
+
+    alter table user_role 
+       add constraint FKa68196081fvovjhkek5m97n3y 
+       foreign key (role_id) 
+       references role (id)
+
+    alter table user_role 
+       add constraint FK859n2jvi8ivhui0rl0esws6o 
+       foreign key (user_id) 
+       references user (id)
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255) not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255) not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255) not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255) not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255),
+        email varchar(255) not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255),
+        location varchar(255),
+        name varchar(255),
+        phonenumber varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table foar.delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table foar.restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table foar.user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
     ) engine=InnoDB
 
     create table hibernate_sequence (
@@ -86,37 +2041,31 @@
 
     insert into hibernate_sequence values ( 1 )
 
-    create table role (
-       user_id bigint not null,
-        role_id integer not null,
-        primary key (user_id, role_id)
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
     ) engine=InnoDB
 
     create table user (
-       user_id bigint not null auto_increment,
-        default_address varchar(255) not null,
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
         email varchar(255) not null,
         password varchar(255) not null,
-        phone_number varchar(255) not null,
-        repassword varchar(255) not null,
         username varchar(255) not null,
-        primary key (user_id)
-    ) engine=InnoDB
-
-    alter table role 
-       add constraint FK91o3jx1kkh8py8fil96eakfxv 
-       foreign key (role_id) 
-       references role (role_id)
-
-    alter table role 
-       add constraint FK61g3ambult7v7nh59xirgd9nf 
-       foreign key (user_id) 
-       references user (user_id)
-
-    create table role (
-       role_id integer not null,
-        role varchar(255),
-        primary key (role_id)
+        primary key (id)
     ) engine=InnoDB
 
     create table hibernate_sequence (
@@ -125,37 +2074,31 @@
 
     insert into hibernate_sequence values ( 1 )
 
-    create table role (
-       user_id bigint not null,
-        role_id integer not null,
-        primary key (user_id, role_id)
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
     ) engine=InnoDB
 
     create table user (
-       user_id bigint not null auto_increment,
-        default_address varchar(255) not null,
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
         email varchar(255) not null,
         password varchar(255) not null,
-        phone_number varchar(255) not null,
-        repassword varchar(255) not null,
         username varchar(255) not null,
-        primary key (user_id)
-    ) engine=InnoDB
-
-    alter table role 
-       add constraint FK91o3jx1kkh8py8fil96eakfxv 
-       foreign key (role_id) 
-       references role (role_id)
-
-    alter table role 
-       add constraint FK61g3ambult7v7nh59xirgd9nf 
-       foreign key (user_id) 
-       references user (user_id)
-
-    create table role (
-       role_id integer not null,
-        role varchar(255),
-        primary key (role_id)
+        primary key (id)
     ) engine=InnoDB
 
     create table hibernate_sequence (
@@ -164,29 +2107,794 @@
 
     insert into hibernate_sequence values ( 1 )
 
-    create table role (
-       user_id bigint not null,
-        role_id integer not null,
-        primary key (user_id, role_id)
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
     ) engine=InnoDB
 
     create table user (
-       user_id bigint not null auto_increment,
-        default_address varchar(255) not null,
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
         email varchar(255) not null,
         password varchar(255) not null,
-        phone_number varchar(255) not null,
-        repassword varchar(255) not null,
         username varchar(255) not null,
-        primary key (user_id)
+        primary key (id)
     ) engine=InnoDB
 
-    alter table role 
-       add constraint FK91o3jx1kkh8py8fil96eakfxv 
-       foreign key (role_id) 
-       references role (role_id)
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
 
-    alter table role 
-       add constraint FK61g3ambult7v7nh59xirgd9nf 
-       foreign key (user_id) 
-       references user (user_id)
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
