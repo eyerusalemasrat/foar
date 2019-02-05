@@ -24,7 +24,7 @@
 	    				<a th:href="@{/login}">Login</a>
 	    			</li>
 	    			<li class="nav-item">
-	    				<a th:hrefhref="@{/sponsors}">Sponsors</a>
+	    				<a th:href="@{/sponsors}">Sponsors</a>
 	    			</li>
 	    			<li class="nav-item dropdown open">
 	    				<a th:href="@{/user_register}">Register</a>
@@ -49,13 +49,13 @@
 					<tr>
 						<td>Username</td>
 						<td>
-							<input type="text" name="Username">
+							<input type="text" name="username">
 						</td>
 					</tr>
 					<tr>
 						<td>Password</td>
 						<td>
-							<input type="password" name="Password">
+							<input type="password" name="password">
 						</td>
 					</tr>
 					<tr>
@@ -65,12 +65,17 @@
 					</tr>
 					<tr>
 						<td>
-							<span class="text-danger" th:if="${#fields.hasErrors('Username')}" 
-     th:errors="*{Username}">Username Error
-							</span><br>
-							<span class="text-danger" th:if="${#fields.hasErrors('Password')}" 
-     th:errors="*{Password}">Password Error
-							</span><br>
+							Don't have account?<a th:href="@{/user_register}">Signup</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="text-danger" th:if="${#fields.hasErrors('username')}" 
+     th:errors="*{username}">Username Error
+							</span>
+							<span class="text-danger" th:if="${#fields.hasErrors('password')}" 
+     th:errors="*{password}">Password Error
+							</span>
 
 						</td>
 					</tr>

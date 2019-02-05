@@ -18,13 +18,19 @@
 	    	<div class="collapse navbar-collapse">
 	    		<ul class="navbar-nav mr-auto nav-dropdown">
 	    			<li class="nav-item">
-	    				<a th:href="@{/restaurant_home}">Home</a>
+	    				<a th:href="@{/admin_home}">Home</a>
 	    			</li>
 	    			<li class="nav-item">
-	    				<a th:href="@{/add_food}">Add Food</a>
+	    				<a th:href="@{/order_list}">Orders</a>
 	    			</li>
 	    			<li class="nav-item dropdown open">
-	    				<a th:href="@{/remove_food}">Remove Food</a>
+	    				<a th:href="@{/register}">Register</a>
+	    			</li>
+	    			<li class="nav-item dropdown open">
+	    				<a th:href="@{/remove}">Remove</a>
+	    			</li>
+	    			<li class="nav-item">	    				
+	    				<a th:href="@{/rating_list}">Ratings</a>
 	    			</li>
 	    			<li class="nav-item">
 	    				<a th:href="@{/logout}">Logout</a>
@@ -36,11 +42,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>Add Food
+				<h1>Add Recipe
 				</h1>
 			</div>
 			<div class="col-sm12">
-			<form method="POST"  th:action = "@{/add_food}" th:object="${food}" enctype="multipart/form-data">
+			<form method="POST"  th:action = "@{add_recipie}" th:object="${recipie}" enctype="multipart/form-data">
 				<table>
 					<thead>
 					</thead>
@@ -56,11 +62,25 @@
 							</td>
 							<td>
 								<span class="badge">Food Picture</span>
-								<input type="file" name="picture">
+								<input type="file" name="picture_file">
 							</td>
+						</tr>
+						<tr>
 							<td>
-								<span>Price</span>
-								<input type="number" name="price">
+								<span class="badge">Time to cook</span>
+								<input type="text" name="time">
+							</td>
+						</tr>
+						<tr>
+							<td colspan=4>
+								<span>Ingredients</span>
+								<textarea rows="10" cols="50" name="ingredients"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan=4>
+								<span>Steps to cook</span>
+								<textarea rows="10" cols="50" name="steps"></textarea>
 							</td>
 						</tr>
 						<tr>
