@@ -7,5 +7,6 @@ import com.coderz.foar.domains.Delivery;
 public interface DeliveryService {
 	public void saveDelivery(Delivery delivery);
 	public List<Delivery> showAllDelivery();
+	public void deleteDelivery(Delivery delivery);
 
 }

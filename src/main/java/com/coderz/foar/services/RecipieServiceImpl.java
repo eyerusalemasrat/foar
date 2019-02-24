@@ -3,9 +3,12 @@ package com.coderz.foar.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.coderz.foar.domains.Recipie;
 import com.coderz.foar.repositories.RecipieRepository;
 
+@Service
 public class RecipieServiceImpl implements RecipieService{
 	
 	private RecipieRepository recipieRepository;

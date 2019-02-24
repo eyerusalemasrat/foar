@@ -1,5 +1,7 @@
 package com.coderz.foar.services;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.coderz.foar.repositories.UserRepository;
@@ -21,6 +23,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User findByUsernameAndPassword(String Username, String Password) {
 		return userRepository.findByUsernameAndPassword(Username, Password);
+	}
+
+	@Override
+	public Optional<User> findUser(Long userId) {
+		Optional<User> usr=userRepository.findById(userId);
+		return usr;
 	}
 
 

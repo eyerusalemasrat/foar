@@ -27,4 +27,9 @@ public class DeliveryServiceImpl implements DeliveryService{
 		deliveryRepository.findAll().forEach(deliveris::add);
 		return deliveris;
 	}
+
+	@Override
+	public void deleteDelivery(Delivery delivery) {
+		deliveryRepository.delete(delivery);
+	}
 }

@@ -2,6 +2,7 @@ package com.coderz.foar.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,21 @@ public class RestaurantServiceImpl implements RestaurantService{
 		List<Restaurant> restaurants=new ArrayList<Restaurant>();
 		restaurantRepository.findAll().forEach(restaurants::add);
 		return restaurants;
+	}
+
+	@Override
+	public void deleteRestaurant(Restaurant restaurant) {
+		restaurantRepository.delete(restaurant);
+	}
+
+	@Override
+	public void deleteAllRestaurants() {
+		restaurantRepository.deleteAll();	
+	}
+
+	public Optional<Restaurant> findRestaurant(long id) {
+		Optional<Restaurant> rst=restaurantRepository.findById(id);
+		return rst;
 	}
 
 
