@@ -23,7 +23,6 @@ public class Delivery {
 		
 	}
 	public Delivery(String name, String phonenumber, String email) {
-		super();
 		this.name = name;
 		this.phonenumber = phonenumber;
 		this.email = email;

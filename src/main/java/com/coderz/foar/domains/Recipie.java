@@ -40,5 +40,10 @@ public class Recipie {
 	public Recipie() {
 		
 	}
+	@Override
+	public String toString() {
+		return "Recipie [id=" + id + ", name=" + name + ", type=" + type + ", time=" + time + ", picture=" + picture
+				+ ", ingredients=" + ingredients + ", steps=" + steps + "]";
+	}
 	
 }
