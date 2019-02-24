@@ -6,7 +6,7 @@
 	<groupId>com.coderz</groupId>
 	<artifactId>foar</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>foar</name>
 	<description>foar online food ordering and recipie</description>
@@ -25,6 +25,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency> 
+			<groupId>org.springframework.boot</groupId>
+     		<artifactId>spring-boot-starter-tomcat</artifactId>  
+       		<scope>provided</scope>
+       </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>		

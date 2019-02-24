@@ -2898,3 +2898,587 @@
     ) engine=InnoDB
 
     insert into hibernate_sequence values ( 1 )
+
+    create table foar.delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table foar.food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table foar.restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table foar.user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_order (
+       id integer not null,
+        order_date varchar(255) not null,
+        restaurant_id integer not null,
+        user_id integer not null,
+        user_location varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table sponsor (
+       id integer not null,
+        sponsor_name integer not null,
+        sponsor_picture integer not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_order (
+       id integer not null,
+        order_date varchar(255) not null,
+        restaurant_id integer not null,
+        user_id integer not null,
+        user_location varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table sponsor (
+       id integer not null,
+        sponsor_name integer not null,
+        sponsor_picture integer not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_order (
+       id integer not null,
+        order_date varchar(255) not null,
+        restaurant_id integer not null,
+        user_id integer not null,
+        user_location varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table sponsor (
+       id integer not null,
+        sponsor_name integer not null,
+        sponsor_picture integer not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_order (
+       id integer not null,
+        order_date varchar(255) not null,
+        restaurant_id integer not null,
+        user_id integer not null,
+        user_location varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table sponsor (
+       id integer not null,
+        sponsor_name integer not null,
+        sponsor_picture integer not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_order (
+       id integer not null,
+        order_date varchar(255) not null,
+        restaurant_id integer not null,
+        user_id integer not null,
+        user_location varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table sponsor (
+       id integer not null,
+        sponsor_name integer not null,
+        sponsor_picture integer not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_order (
+       id integer not null,
+        order_date varchar(255) not null,
+        restaurant_id integer not null,
+        user_id integer not null,
+        user_location varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table sponsor (
+       id integer not null,
+        sponsor_name integer not null,
+        sponsor_picture integer not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_order (
+       id integer not null,
+        order_date varchar(255) not null,
+        restaurant_id integer not null,
+        user_id integer not null,
+        user_location varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table sponsor (
+       id integer not null,
+        sponsor_name integer not null,
+        sponsor_picture integer not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_order (
+       id integer not null,
+        order_date varchar(255) not null,
+        restaurant_id integer not null,
+        user_id integer not null,
+        user_location varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table sponsor (
+       id integer not null,
+        sponsor_name integer not null,
+        sponsor_picture integer not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
+
+    create table delivery (
+       id integer not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_order (
+       id integer not null,
+        order_date varchar(255) not null,
+        restaurant_id integer not null,
+        user_id integer not null,
+        user_location varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table food_recipe (
+       id integer not null,
+        ingredients varchar(255) not null,
+        name varchar(255) not null,
+        picture varchar(255),
+        steps varchar(255) not null,
+        time varchar(255) not null,
+        type varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table restaurant (
+       id integer not null,
+        email varchar(255) not null,
+        location varchar(255) not null,
+        name varchar(255) not null,
+        phonenumber varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table sponsor (
+       id integer not null,
+        sponsor_name integer not null,
+        sponsor_picture integer not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table user (
+       id integer not null,
+        current_location varchar(255),
+        default_location varchar(255) not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+
+    insert into hibernate_sequence values ( 1 )
