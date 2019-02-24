@@ -21,7 +21,7 @@ public class RegisterDeliveryController {
 	  public RegisterDeliveryController(DeliveryService deliveryService) {
 		this.deliveryService = deliveryService;
 	}
-	@ModelAttribute	 
+	  @ModelAttribute	 
 	  @GetMapping
 	  public String home(Model model) {
 		  model.addAttribute("delivery",new Delivery(null, null, null));
