@@ -39,7 +39,53 @@
 				<h1>User Home Page
 				</h1>
 			</div>
+			<div class="col-sm-12">
+				<h3>Available Foods</h3>
+			</div>
+			<div class="col-sm-3">Restaurant ID</div>
+			<div class="col-sm-3">Food Name</div>
+			<div class="col-sm-3">Food type</div>
+			<div class="col-sm-3">Food Price</div>
 		</div>
+		<div class="row" th:each="food:${foods}">
+			<div class="col-sm-3" th:text="{food.restaurantId}"></div>
+			<div class="col-sm-3" th:text="{food.name}"></div>
+			<div class="col-sm-3" th:text="{food.type}"></div>
+			<div class="col-sm-3" th:text="{food.price}"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Available Restaurants</h3>
+			</div>
+			<div class="col-sm-3">Restaurant Id</div>
+			<div class="col-sm-3">Restaurant Name</div>
+			<div class="col-sm-3">Restaurant Location</div>
+			<div class="col-sm-3">Restaurant Email</div>
+			<div class="col-sm-3">Restaurant PhoneNumber</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12" th:text="${restaurant.id}"></div>
+			<div class="col-sm-12" th:text="${restaurant.name}"></div>
+			<div class="col-sm-12" th:text="${restaurant.location}"></div>
+			<div class="col-sm-12" th:text="${restaurant.email}"></div>
+			<div class="col-sm-12" th:text="${restaurant.phonenumber}"></div>
+		</div>		
+
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Available Deliveries</h3>
+			</div>
+			<div class="col-sm-3">Delivery Id</div>
+			<div class="col-sm-3">Delivery Name</div>
+			<div class="col-sm-3">Delivery Email</div>
+			<div class="col-sm-3">Delivery PhoneNumber</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12" th:text="${delivery.id}"></div>
+			<div class="col-sm-12" th:text="${delivery.name}"></div>
+			<div class="col-sm-12" th:text="${delivery.email}"></div>
+			<div class="col-sm-12" th:text="${delivery.phonenumber}"></div>
+		</div>		
 	</div>
     <!-- Bootstrap core JavaScript
     ================================================== -->

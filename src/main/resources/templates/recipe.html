@@ -37,9 +37,20 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<h1>Recipe Page</h1>
-				<div>Starters</div>
-				<div>Main course dishes</div>
-				<div>Deserts</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2">Food Name</div>
+				<div class="col-sm-2">Food Type</div>
+				<div class="col-sm-2">Cooking time</div>
+				<div class="col-sm-2">Ingredients</div>
+				<div class="col-sm-2">Cooking Steps</div>
+			</div>
+			<div th:each="recipe:${recipies}">
+				<div  class="col-sm-2" th:text="recipe.name"></div>
+				<div th:text="{recipe.type}" class="col-sm-2"></div>
+				<div th:text="{recipe.time}" class="col-sm-2"></div>
+				<div th:text="{recipe.ingredients}" class="col-sm-2"></div>
+				<div th:text="{recipe.steps}" class="col-sm-2"></div>
 			</div>
 		</div>
 	</div>

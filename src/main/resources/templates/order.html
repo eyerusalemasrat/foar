@@ -39,9 +39,33 @@
 				<h1>Order Page</h1>
 			</div>
 			<div>
+			<form method="POST"  th:action = "@{order}" th:object="${order}">
 				<table>
-					<tr></tr>
+					<tr>
+							<td>
+								<span class="badge">User Id</span>
+								<input type="number" name="userId">
+							</td>
+							<td>
+								<span class="badge">Restaurant Id</span>
+								<input type="number" name="restaurantId">
+							</td>
+							<td>
+								<span class="badge">Order Date</span>
+								<input type="date" name="orderDate">
+							</td>
+							<td>
+								<span class="badge">User Location</span>
+								<input type="text" name="userLocation">
+							</td>
+					</tr>
+						<tr>
+							<td>
+								<input type="submit" value="Order Food">
+							</td>
+						</tr>
 				</table>
+				</form>
 			</div>
 		</div>
 	</div>
